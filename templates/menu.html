@@ -1,0 +1,79 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content drag-content="true">
+    <ion-nav-bar id='dark-head' class="bar-dark" >
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+	  
+	  <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon color-yellow" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+	  <ion-nav-buttons side="right">
+			<button class="button button-icon button-clear ion-ios-heart-outline f-size-25 color-yellow" >
+			</button>
+	  </ion-nav-buttons>
+	</ion-nav-bar>
+    
+	<ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left" class='bg-grey'>
+
+    <ion-content has-bouncing="true">
+     
+        
+       <div id='menu-list' class='bg-grey' >
+
+			<div id='profile-box'> 
+				<div class='list'>
+					<a menu-close  class="item item-icon-left item-icon-right color-yellow bg-dark" ng-style="{'line-height': '20px'}" href="#/app/settings">
+						<!-- <img class='icon-30' src='img/logo.png'/>	 -->
+						<span>{{user_data.User_name}}</span>
+						<p class='color-gery'>{{user_data.Mobile}}</p>
+						<i class="icon ion-gear-b  color-yellow"></i>
+					</a>
+				</div>
+			</div>
+			
+			<div class='wrap-it'>
+				<div class='list'>
+
+				  <a  menu-close mainmenu ng-click='load_trips()' class="item item-icon-left item-icon-right color-gery "  href="#">
+						<i class="icon ion-speedometer f-size-25"></i>
+							{{ 'My Trips' | langTranslate: appConvertedLang['My_Trips'] }}
+						<i class="icon ion-ios-arrow-forward f-size-25"></i>
+				  </a> 
+
+				</div>
+			</div>
+			<div class='wrap-it'>
+				<div class='list'>
+
+					<a  menu-close  ng-click='logout()' class="item item-icon-left item-icon-right color-gery no-border " >
+						<i class="icon ion-ios-information f-size-25 color-d-gery"></i>
+							 {{ 'Logout' | langTranslate: appConvertedLang['Logout'] }}
+						<i class="icon ion-ios-arrow-forward f-size-25 color-d-gery"></i>
+				  </a>
+					
+				</div>
+			</div>
+           
+           
+         <!--  <div class='wrap-it'>
+				<div class='list'>
+
+					<a  menu-close  ng-click='close_app()' class="item item-icon-left item-icon-right color-gery no-border " >
+						<i class="icon ion-ios-information f-size-25 color-d-gery"></i>
+							Exit
+						<i class="icon ion-ios-arrow-forward f-size-25 color-d-gery"></i>
+				  </a>
+					
+				</div>
+			</div>-->
+			
+			
+	   </div>
+      
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

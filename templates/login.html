@@ -1,0 +1,47 @@
+<ion-modal-view >
+  <ion-content  scroll="false">
+	<div id='login-page' class='set-bg' full-height>
+		<div class='head-bar bg-black'>
+			<p class='vertical-middle text-center color-yellow big-font'> {{ 'SIGN IN'}} </p>
+			<div class='close-icon' ng-click="closeLogin()">
+				<img class='vertical-middle icon-25 ' src='img/icons/close.png'   />
+			</div>
+		</div>
+		
+		<div class='content-box'>
+			<div id='login-from-box' class='vertical-middle' ng-form='login_form'>
+				<div class='main-container'>
+			    
+					<div class="error-container " ng-show="login.message.length" >
+						<p class="error	text-center " >{{login.message}}</p>
+					</div>
+					
+					<div class='input-box'>
+						<div class="error-container " ng-show="login_form.mail.$dirty && login_form.mail.$invalid" >
+							<small class="error	 " ng-show="login_form.mail.$error.required">{{ 'Enter user name / email / mobile' }}</small>
+								
+						</div>
+						<input name='mail' ng-model='login.mail' required placeholder="{{ 'Enter user name / email / mobile' | langTranslate: appConvertedLang['Enter_user_name_email_mobile'] }}" class='color-yellow' type='text' />
+						<img class='input-icon icon-20' src='img/icons/mobile.png'/>
+					</div>
+					</br>
+					<div class='input-box'>
+						<div class="error-container" ng-show="login_form.pwd.$dirty && login_form.pwd.$invalid">
+							<small class="error  " ng-show="login_form.pwd.$error.required">{{ 'Enter Password' }}</small>
+						</div>
+						
+						<input name='pwd' ng-model='login.pwd' ng-trim="true" required placeholder="{{ 'Enter Password' | langTranslate: appConvertedLang['Enter_Password'] }}" class='color-yellow' type='password' />
+						<img class='input-icon icon-20' src='img/icons/lock.png'/>
+					</div>
+				<input ng-click='doLogin(login_form)'  class='btn bg-yellow color-white m-top-20 big-font' type='button' value="{{ 'SIGN IN' | langTranslate: appConvertedLang['Sign_In'] }}" /> 
+					<div class='text-center m-top-20'>
+						<a href='' class='color-white ' >{{ 'Forgot Password?'   }}</a>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</div>
+	<div class='color-white text-center net-error' >No network connection!</div>	
+  </ion-content>
+ 
+</ion-modal-view>

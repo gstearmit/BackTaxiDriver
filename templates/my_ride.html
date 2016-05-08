@@ -1,0 +1,29 @@
+<ion-view class='bg-grey'>
+    <ion-nav-title>
+        <div class='color-yellow text-center'>{{ 'My Ride' | langTranslate: appConvertedLang['My_Ride'] }}</div>
+    </ion-nav-title>
+    <ion-content>
+   
+        <div id='my-trip-container' class='h-100-p  set-bg'>
+            <div id='head-tab-area' class='row no-padding text-center color-gery bg-dark2'>
+                <div class='col col-33 ' ng-class='{active: myTrip_menu_selected == $index }' ng-click='Trip_menu_click($index)' ng-repeat='menu in myTrip_menu'>
+                    <div class='Menu-tab-head '>{{ menu.name | menuLangTranslate: appConvertedLang['NEW_RIDES'] : appConvertedLang['COMPLETED'] : appConvertedLang['CANCELLED'] }}</div>
+                </div>
+            </div>
+
+            <div id='content-tab-area' class='visible'>
+                <ion-scroll direction="y" style='height: 100%'>
+                    <a href="#/app/tripDetails" ng-click='show_details($index)' class="item item-icon-left item-icon-right color-gery " ng-repeat='item in active_trip' href="#">
+                        <i class="icon ion-ios-cog f-size-25 color-d-gery"></i>
+                        <p class='color-yellow f-size-17'> {{item.pickup_area }}</p>
+                        <span class='f-size-12 color-gery'><i>{{item.pickup_date}} 
+                         </i></span>
+                        <i class="icon ion-ios-arrow-forward f-size-25 color-d-gery"></i>
+                    </a>
+                </ion-scroll>
+            </div>
+
+        </div>
+        <div class='color-white text-center net-error'>No network connection!</div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,32 @@
+<ion-view view-title="landing">
+  <ion-content scroll="false">
+	 <div  class="bg-yellow full-height" full-height>
+			<div class='main-container'>
+				<div id='logo-box'>
+					<img class='logo vertical-middle' src='img/logo.png'/>
+				</div>
+				<div id='sign-in-box'>
+					<div class='vertical-middle'>
+						<input ng-click='sign_up()' id='signup-redirect-btn'  class='btn bg-yellow border-white' type='button' value=" {{ 'New user ? Sign Up now !' | langTranslate: appConvertedLang['New_user_Sign_Up_Now'] }}" /></br>
+						<input ng-click='show_login1()' id='signIn-redirect-btn'  class='btn bg-white' type='button' value="{{ 'Sign In' | langTranslate: appConvertedLang['Sign_In'] }}" /> 
+						<a class='a m-top-10' href=''> {{ 'Forgot Password?' | langTranslate: appConvertedLang['Forgot_Password'] }}</a>
+					</div>
+				</div>
+				<div id='sign-in-with' class='text-center'>
+					<div class='vertical-middle'>
+					
+						<div class='white-line'></div>
+						<div  class='line-title text-center' >
+							<span class='bg-yellow'>  {{ 'Or sign In with' | langTranslate: appConvertedLang['Or_sign_In_with'] }}</span>
+						</div>
+						
+						<a ng-click="facebookLogin()"><img src='img/icons/fb.png' /></a>
+						<a ng-click='googleLogin()'><img src='img/icons/g+.png' /></a>
+						
+					</div>
+				</div>
+			</div>
+	  </div>
+	<div class='color-white text-center net-error' >No network connection!</div>	
+  </ion-content>
+</ion-view>

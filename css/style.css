@@ -1,0 +1,23 @@
+/* Empty. Add your own CSS if you like */
+#map {
+  width: 100%;
+  height: 100%;
+  background-color: #2B2B2B !important;
+}
+#right-panel {
+  
+    padding: 0 15px !important;
+}
+
+.scroll {
+  height: 100%;
+}
+.adp, .adp table {
+    color:#F2C21E !important;
+}
+.adp-placemark {
+    background-color: #000000 !important;
+    border: medium none !important;
+}
+.adp-legal{ display:none !important;}
+#rate_card_map{ width:100% !important; height:55% !important;background-color: #333333 !important;}

@@ -1,0 +1,78 @@
+<ion-view  class='bg-grey'>
+	<ion-nav-title>
+	  <div class='color-yellow text-center'>Profile</div>
+  </ion-nav-title>
+	<ion-content  >
+	<div  style='height: 100%;'>
+	  <div class='content-box'>
+			<div id='login-from-box' class='m-top-20 settings' >
+				<div style='padding: 35px 0;' class='main-container'>
+					
+					<!-- <div ng-show='signUp.error_list.length' class='text-center  m-top-20'>
+						<span ng-repeat='error in signUp.error_list' class="error d-block">{{error.message}}</span>
+					</div> -->                               
+					
+					<div class='input-box'>
+						<input ng-disabled='true' value='User Name : {{user_data.User_name}}'  class='color-gery' type='text' />
+						<img class='input-icon icon-20' src='img/icons/user.png'/>
+					</div>
+					</br>
+				 
+				  <div class='input-box'>
+						<input  ng-disabled='true'  value='Mobile : {{user_data.Mobile}}' class='color-gery' />
+						<img class='input-icon icon-20' src='img/icons/mobile.png'/>
+					</div>
+					</br>
+					
+					<div class='input-box'>
+						<input name='mail' type='email' ng-disabled='true'  value='Mail : {{user_data.Email}}' class='color-gery' type='text' />
+						<img class='input-icon icon-20' src='img/icons/mail.png'/>
+					</div>
+					</br>
+				</div>	
+				<p  class="text-center color-yellow bg-dark1 p-head no-margin"> CHANGE PASSWORD</p>
+					<div id='update-form' class='bg-' ng-form='sign_up_form' >
+						
+                        
+                        <div class='input-box'>
+							
+                            <input name='old_pwd' ng-model='signUp.old_pwd' placeholder='Current password' class='color-yellow' ng-minlength='6' type='password' required/>
+<small class="error	 " ng-show="sign_up_form.old_pwd.$error.minlength">Minimum 6 characters</small>				                            
+                            
+							<img class='input-icon icon-20' src='img/icons/lock.png'/>
+						</div>
+                        </br> 
+                        
+                        <div class='input-box'>
+							<div class="error-container " ng-show="sign_up_form.pwd.$dirty && sign_up_form.pwd.$invalid" >
+								<small class="error	 " ng-show="sign_up_form.pwd.$error.required">Enter new Password</small>
+								<small class="error	 " ng-show="sign_up_form.pwd.$error.minlength">Minimum 6 characters</small>								
+							</div>
+							<input name='pwd' ng-model='signUp.pwd' placeholder='New password' class='color-yellow' ng-minlength='6' type='password' required/>
+							<img class='input-icon icon-20' src='img/icons/lock.png'/>
+						</div>
+                        
+                        
+                        
+						</br>
+						
+						<div class='input-box'>
+							<div class="error-container" ng-show="sign_up_form.pwd.$dirty ">
+								<small class="error " ng-show="(signUp.pwd != signUp.c_pwd) ">Passwords do not match.</small>
+
+							</div>
+							<input name='c_pwd' ng-model='signUp.c_pwd' placeholder='Confirm password' class='color-yellow' type='password' required/>
+							<img class='input-icon icon-20' src='img/icons/lockTick.png'/>
+						</div>
+						
+						<input ng-click='do_update(sign_up_form)'  class='btn bg-yellow color-white big-font m-top-20' type='button' value='RESET PASSWORD' /> 
+						
+					</div>
+					
+			</div>
+		</div>
+	</div>
+	<div class='color-white text-center net-error' >No network connection!</div>	
+  </ion-content>
+ 
+</ion-view> 

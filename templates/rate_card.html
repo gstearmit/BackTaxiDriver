@@ -1,0 +1,65 @@
+<ion-view class='bg-grey'>
+    <ion-nav-title>
+        <div class='color-yellow text-center'>{{ 'Rate Card' | langTranslate: appConvertedLang['Rate_Card'] }}</div>
+    </ion-nav-title>
+    <ion-content>
+        <div class='h-100-p'>
+
+            <div id="rate_card_map"></div>
+
+            <div class="row">
+                <div class="col color-yellow" align="center">{{ 'RUNNING DETAILES' | langTranslate: appConvertedLang['RUNNING_DETAILES'] }}</div>
+            </div>
+            <div class="row ">
+                <div class="col color-yellow">{{ 'CURRENT LOCATION' | langTranslate: appConvertedLang['CURRENT_LOCATION'] }}:</div>
+                <div class="col color-yellow" id="current_location"></div>
+            </div>
+
+            <div class="row ">
+                <div class="col color-yellow">{{ 'MINIMUM DISTANCE' | langTranslate: appConvertedLang['MINIMUM_DISTANCE'] }}:</div>
+                <div class="col color-yellow"  ng-repeat='item in all_settings'>{{trip_details.min_distance}} {{item.measurements}}</div>
+            </div>
+
+            <div class="row ">
+                <div class="col color-yellow">{{ 'MINIMUM RATE' | langTranslate: appConvertedLang['MINIMUM_RATE'] }}:</div>
+                <div class="col color-yellow" ng-repeat='item in all_settings'>{{trip_details.minimum_rate}}  {{item.currency | split:',':1}}</div>
+            </div>
+
+            <div class="row ">
+                <div class="col color-yellow">{{ 'STANDARD RATE' | langTranslate: appConvertedLang['STANDARD_RATE'] }}:</div>
+                <div class="col color-yellow" ng-repeat='item in all_settings'>{{trip_details.standard_rate}}  {{item.currency | split:',':1}}</div>
+            </div>
+
+            <div class="row">
+                <div class="col color-yellow">{{ 'TRIP TYPE' | langTranslate: appConvertedLang['TRIP_TYPE'] }}:</div>
+                <div class="col color-yellow">{{trip_details.trip_type}}</div>
+            </div>
+
+            <div class="row">
+                <div class="col color-yellow">{{ 'TOTAL TRAVELED' | langTranslate: appConvertedLang['TOTAL_TRAVELED'] }}(<span class='color-yellow' ng-repeat='item in all_settings'> {{item.measurements}} </span>):</div>
+                <div class="col color-yellow" id="distance"></div>
+            </div>
+
+            <div class="row">
+                <div class="col color-yellow">{{ 'TOTAL RATE' | langTranslate: appConvertedLang['TOTAL_RATE'] }}:</div>
+                <div class="col color-yellow" ng-repeat='item in all_settings'>{{trip_details.total_rate}}  {{item.currency | split:',':1}}</div>
+            </div>
+
+
+            <div class='color-white text-center net-error'>{{ 'No network connection!' | langTranslate: appConvertedLang['No_network_connection'] }}</div>
+        </div>
+
+
+
+
+    </ion-content>
+
+    <ion-footer-bar class="bg-dark">
+
+        <div class='footer-box bg-dark color-yellow'>
+            <div class='w-50-p pull-left my-button h-100-p text-center border-r-yellow' ng-click='goto_my_ride()'>{{ 'CANCEL' | langTranslate: appConvertedLang['CANCEL'] }}</div>
+<div class='w-50-p pull-left my-button h-100-p text-center' ng-click='stop_ride(ride_uniq_id)'>{{ 'STOP' | langTranslate: appConvertedLang['STOP'] }}</div>
+        </div>
+
+    </ion-footer-bar>
+</ion-view>

@@ -1,0 +1,137 @@
+
+*{
+		    box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	border: none;
+	/* text-shadow: none !important; */
+	/* font-family: 'OpenSans' !important; */
+	/* font-size: 15px; */
+	/* -webkit-appearance: none; */
+	margin:0;
+	padding:0;
+	-webkit-appearance: none;
+}
+
+.main-container{ width: 80%; margin:0 auto; max-width: 650px;height: 100%; }
+/* #sign-up-page .main-container{ margin-top: 30px; } */
+.logo{ width: 100px}
+#logo-box{ height: 40%;text-align: center }
+#sign-in-box{ text-align: center; height: 30%;}
+#sign-in-with{ height: 30%; }
+.white-line{ height: 0; border-top: 1px solid #fff;}
+.line-title{ position: relative;margin-top: -12px; margin-bottom: 40px;}
+.line-title span{ padding: 0 20px; }
+.full-height{ height: 100%;}
+
+
+
+#login-page{ background-image: url('../img/login_bg.jpg');}
+#sign-up-page{ background-image: url('../img/sign_up_bg.jpg');}
+
+.item{ background: none !important;}
+#login-page .bar{background: none;}
+
+.head-bar{ padding-top: 10px; height:54px;position: relative;}
+.head-bar .close-icon{ position: absolute; right: 0; top: 0; z-index: 100; padding: 0 10px ;height: 100%;}
+.big-font{ font-size: 17px; }
+
+.content-box{ height: calc( 100% - 44px); }
+#login-from-box .input-box{ border-bottom: 1px solid #fff;position:relative}
+#login-from-box.settings .input-box{ border-bottom: 1px solid #303030;position:relative}
+#login-from-box .input-box input{ background: none; width: calc(100% - 40px);border-radius: 0 !important;}
+#login-from-box .input-box .input-icon{position: absolute; right: 5px; bottom: 5px;}
+
+
+
+#dark-head .bar-header{ background-color: #161616 !important;border: none !important;}
+/* #cab-from{ padding: 6px 0 5px 0px !important;} */
+
+
+#main-land-container{ height: 100%; border-top: 1px solid #000000!important;border-bottom: 1px solid #282828; }
+.target-box{ padding: 10px 0;}
+.target-box .wrap{  width: calc(100% - 40px) !important;  margin: 0 auto ; background-color: #302e2e; border-radius: 15px;}
+.target-box .item-input{ padding: 0 0 0 16px;}
+.target-box input{ height: 27px !important;}
+#menu-list .wrap-it{ padding: 0 0 0 15px;border-bottom: 8px solid #1b1b1d; }
+/* #menu-list{ height: 100%;} */
+
+#menu-list .item{  border: none; border-bottom: 1px solid #161616; }
+#menu-list .wrap-it .item{ padding-top: 12px !important; padding-bottom: 12px !important;}
+a.active-menu{color: #F2C21E !important;}
+a.active-menu *{color: #F2C21E !important;}
+.no-border{ border: none !important;}
+
+#profile-box{ margin-top: 30px;}
+#menu-list .wrap-it a.item{font-size: 13px;}
+
+.footer-box{ height: 100%; width: 100%; }
+.my-button{   line-height: 34px; }
+ion-scroll[direction=x] {
+  width: 100vw;
+}
+.bar-footer{ border: none !important;}
+
+#my-pop{ border-top: 3px solid  #1C1C1C;	}
+#my-pop .head-box{ height: 70px; }
+#fare-breakup-box{border-top: 1px solid #1C1C1C; margin-top: 15px;}
+
+#fare-breakup-box .head{ position: relative; margin-top: -14px; }
+#fare-breakup-box .head span{ display: inline-block;
+	padding: 4px 20px; border-radius: 20px; background-color: #1C1C1C;
+	color: #fff;
+}
+.item-rate{ border-right: 1px solid #1C1C1C; height: 80px;}
+.active_cab{ border-top: 2px solid #F2C21E;}
+
+#trip-date{ }
+
+
+
+
+
+/* MY Trip
+================*/
+
+
+#my-trip-container{
+	background-image: url('../img/sign_up_bg.jpg');
+}
+
+.Menu-tab-head{ height: 35px; line-height: 35px;  }
+#head-tab-area .col{border: 1px solid #161616;}
+#head-tab-area .col.active{ background-color: #F2C21E; color:#000; }
+#content-tab-area{ padding: 10px 0 0 20px; height: calc(100% - 50px); overflow: auto;}
+#rateCard-tab-area{  height: calc(100% - 50px); overflow: auto;}
+#content-tab-area .item{ border: none !important; border-bottom: 1px solid #5B5C5D !important;
+	padding-top: 5px; padding-bottom: 5px;
+}
+#content-tab-area .item p{ margin-bottom: 0;}
+
+ion-header-bar .back-text ,
+ion-header-bar .ion-ios-arrow-back{
+	color:  #F2C21E !important;
+}
+#det-box1{
+	padding: 10px;
+}
+
+.yellow-hr{
+	height: 1px !important; background-color: #F2C21E !important;position: relative; ;
+}
+.mid-item{  display: block;
+    margin: -10px auto 0;
+    position: relative;
+    width: 40px; }
+		
+.p-head{ height: 30px; line-height: 30px;}		
+.r-border-light{ border-right: 1px solid #38393D !important;}
+.b-border-light{ border-bottom: 1px solid #38393D !important;}
+#det-box2{ padding: 20px 10% 40px;margin-bottom: 10px;}
+
+.rate-head{height: 43px;}
+.rate-head img{ width: 60px; }
+
+#update-form{ padding: 10px 10% 30px}

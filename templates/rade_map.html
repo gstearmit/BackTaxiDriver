@@ -1,0 +1,117 @@
+<ion-view>
+
+    <ion-nav-title>
+        <div class='color-yellow text-center'>{{ 'Map View' | langTranslate: appConvertedLang['Map_View'] }}</div>
+    </ion-nav-title>
+
+    <ion-content scroll='false' drag-content="false">
+        <div id='main-land-container'>
+            <div id='set-top' class='target-box bg-dark'>
+                <div class='wrap'>
+                    <label class=" item-input">
+                        <i class="icon ion-ios-search placeholder-icon color-yellow "></i>
+                        <!-- <input class='color-yellow' ng-autocomplete id="autocomplete-to" type="text" ng-model="sel_place"  placeholder="Pickup location" details="autocomplete.details" > -->
+                        <input ng-disabled='pop_status' class='color-yellow' id="autocompletefrom" ng-model='google_locations.pick_up' type="text" ng-focus='disableTapFrom()' placeholder="Enter Pickup location" />
+
+                    </label>
+
+                </div>
+                <div class='wrap' style='margin-top: 10px;'>
+                    <label class=" item-input">
+                        <i class="icon ion-ios-search placeholder-icon color-yellow "></i>
+                        <!-- <input class='color-yellow' ng-autocomplete id="autocomplete-to" type="text" ng-model="sel_place"  placeholder="Pickup location" details="autocomplete.details" > -->
+                        <input ng-disabled='pop_status' class='color-yellow' id="autocompleteto" ng-model='google_locations.drop' type="text" ng-focus='disableTapTo()' placeholder="Enter Drop location" />
+
+                    </label>
+                </div>
+            </div>
+
+            <div id="map" data-tap-disabled="true"> </div>
+
+            <script id="modal.html" type="text/ng-template">
+                <div class="modal">
+                    <header class="bar bar-header bar-positive">
+                        <h1 class="title">I am A Modal</h1>
+                        <div class="button button-clear" ng-click="modal.hide()"><span class="icon ion-close"></span></div>
+                    </header>
+                    <content padding="true">
+
+
+                    </content>
+                </div>
+            </script>
+
+            <input id='Tripdate' type='datetime-local' ng-model='Trip_Date' />
+        </div>
+
+        <div id='my-pop' class='animation-styles bg-dark1'>
+            <!-- http://codepen.io/anon/pen/avNRwz -->
+            <!-- <my-date-time-picker placeholder="Enter Date here" title="Select Date" ng-model="my_model" /> -->
+
+            <div id='tab-hide' class='bg-dark1 visible'>
+                <div class='head-box text-center'>
+                    <div class='vertical-middle'>
+                        <span class='color-yellow d-block '>{{selected_cab.cartype}}</span>
+                        <span class='color-gery d-block'>Toyota etios, tata indigo, maruti dezire.</span>
+                    </div>
+                </div>
+
+                <div id='fare-breakup-box' class='text-center'>
+                    <div class='head'>
+                        <span>Fare Breakup</span>
+                    </div>
+                    <!-- {{end_box}} -->
+                    <div class="row ">
+                        <div class="item-rate col col-33">
+                            <div class='vertical-middle'>
+                                <p class='color-gery'><b><span class='color-yellow f-size-20'>₹ </span> {{selected_cab.intailrate}}</b></p>
+                                <p class='color-gery'> First {{ selected_cab.intialkm }}km</p>
+                            </div>
+                        </div>
+                        <div class="item-rate col col-33">
+                            <div class='vertical-middle'>
+                                <p class='color-gery'><b><span class='color-yellow f-size-20'>₹ </span>{{selected_cab.standardrate}}/km</b></p>
+                                <p class='color-gery'> After {{ selected_cab.intialkm }}km</p>
+                            </div>
+                        </div>
+                        <div class="item-rate col col-33 no-border">
+                            <div class='vertical-middle'>
+                                <p class='color-gery'><b><span class='color-yellow f-size-20'>₹ </span>1/min</b></p>
+                                <p class='color-gery'>Ride time rate</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p class='color-gery f-size-12 p10'>Airport rate may differ, peak time charges may apply.</p>
+                </div>
+
+            </div>
+
+            <ion-scroll delegate-handle="calendarScroll" direction="x" class='bg-dark2'>
+
+                <div class="row no-padding text-center ">
+                    <div class="col col-25" ng-class="{active_cab : active_cab == $index }" ng-click='clicked_item($index)' ng-repeat="cab in cabs">
+                        <div class="col color-yellow">{{cab.cartype}}</div>
+                        <img ng-src='img/{{cab.cartype}}.png' style='width: 50px' />
+                        <!-- <div class="col color-gery">{{day.number}}</div> -->
+
+                    </div>
+                </div>
+            </ion-scroll>
+        </div>
+        <div class='color-white text-center net-error'>{{ 'No network connection!' | langTranslate: appConvertedLang['No_network_connection'] }}</div>
+    </ion-content>
+
+    <ion-footer-bar class="bg-dark">
+    <div class='footer-box bg-dark color-yellow' >
+        
+        <div class='w-50-p pull-left my-button h-100-p text-center' ng-click="show_direction()"> {{ 'GET DIRECTIONS' | langTranslate: appConvertedLang['GET_DIRECTIONS'] }}</div>
+        <div class='w-50-p pull-left my-button h-100-p text-center' ng-click='start_ride()'> {{ 'START NOW' | langTranslate: appConvertedLang['START_NOW'] }}</div>
+    </div>
+
+
+</ion-footer-bar>
+   <!-- <div class="bar bar-footer bar-balanced bg-dark">
+        <button class="button button-block button-energized">START NOW</button>
+    </div>-->
+
+</ion-view>

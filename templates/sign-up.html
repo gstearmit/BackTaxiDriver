@@ -1,0 +1,91 @@
+<ion-modal-view id='sign-up-page' class='set-bg' class='bg-grey'>
+  
+<ion-content >
+	<div  style='height: 100%;'>
+	  <div class='head-bar bg-black'>
+			<p class='vertical-middle text-center color-yellow big-font'> {{ 'SIGN UP' | langTranslate: appConvertedLang['SIGN_UP'] }}</p>
+			<div class='close-icon' ng-click="closeSignUp()">
+				<img class='vertical-middle icon-25 ' src='img/icons/close.png'   />
+			</div>
+		</div>
+		
+		<div class='content-box'>
+			<div id='login-from-box' class='m-top-20' ng-form='sign_up_form'>
+				<div class='main-container'>
+									
+					<div class='input-box'>
+						<div class="error-container " ng-show="sign_up_form.name.$dirty && sign_up_form.name.$invalid" >
+							<small class="error	 " ng-show="sign_up_form.name.$error.required"> {{ 'Enter your name' | langTranslate: appConvertedLang['Enter_your_name'] }}</small>
+						</div>
+						
+						<input name='name' ng-model='signUp.name' placeholder="{{ 'Name' | langTranslate: appConvertedLang['Name'] }}" class='color-yellow' type='text' required/>
+						<img class='input-icon icon-20' src='img/icons/user.png'/>
+					</div>
+					</br>
+					
+					<div class='input-box'>
+						<div class="error-container " ng-show="sign_up_form.user_name.$dirty && sign_up_form.user_name.$invalid" >
+							<small class="error	 " ng-show="sign_up_form.user_name.$error.required"> {{ 'Enter user name' | langTranslate: appConvertedLang['Enter_user_name'] }}</small>
+							<small class="error	 " ng-show="sign_up_form.user_name.$error.minlength"> {{ 'Minimum 6 characters' | langTranslate: appConvertedLang['Minimum_6_characters'] }}</small>
+							
+						</div>
+						
+						<input name='user_name' ng-model='signUp.user_name' placeholder=" {{ 'User Name' | langTranslate: appConvertedLang['User_Name'] }}" class='color-yellow' type='text' ng-minlength='6' required/>
+						<img class='input-icon icon-20' src='img/icons/user.png'/>
+					</div>
+					</br>
+					
+					<div class='input-box'>
+						<div class="error-container " ng-show="sign_up_form.number.$dirty && sign_up_form.number.$invalid" >
+							<small class="error	 " ng-show="sign_up_form.number.$error.required">{{ 'Enter your number' | langTranslate: appConvertedLang['Enter_your_number'] }}</small>
+							<small class="error	 " ng-show="sign_up_form.number.$error.number">{{ 'Enter valid mobile number' | langTranslate: appConvertedLang['Enter_valid_mobile_number'] }}</small>								
+							<small class="error	 " ng-show="sign_up_form.number.$error.minlength">{{ 'Enter valid mobile number' | langTranslate: appConvertedLang['Enter_valid_mobile_number'] }}</small>								
+							<small class="error	 " ng-show="sign_up_form.number.$error.maxlength">{{ 'Enter valid mobile number' | langTranslate: appConvertedLang['Enter_valid_mobile_number'] }}</small>								
+						</div>
+						
+						<input name='number' placeholder="{{ 'Mobile' | langTranslate: appConvertedLang['Mobile'] }}" ng-model='signUp.mobile' type='number' class='color-yellow' type='text' ng-minlength="10" ng-maxlength="10" required />
+						<img class='input-icon icon-20' src='img/icons/mobile.png'/>
+						
+					</div>
+					</br>
+					
+					<div class='input-box'>
+						<div class="error-container " ng-show="sign_up_form.mail.$dirty && sign_up_form.mail.$invalid" >
+							<small class="error	 " ng-show="sign_up_form.mail.$error.required"> {{ 'Enter email' | langTranslate: appConvertedLang['Enter_email'] }}</small>
+							<small class="error	 " ng-show="sign_up_form.mail.$error.email"> {{ 'Enter valid email' | langTranslate: appConvertedLang['Enter_valid_email'] }}</small>								
+						</div>
+						
+						<input name='mail' type='email' required ng-model='signUp.mail' placeholder="{{ 'Mail' | langTranslate: appConvertedLang['Mail'] }}" class='color-yellow' type='text' />
+						<img class='input-icon icon-20' src='img/icons/mail.png'/>
+					</div>
+					</br>
+					
+					<div class='input-box'>
+						<div class="error-container " ng-show="sign_up_form.pwd.$dirty && sign_up_form.pwd.$invalid" >
+							<small class="error	 " ng-show="sign_up_form.pwd.$error.required"> {{ 'Enter Password' | langTranslate: appConvertedLang['Enter_Password'] }}</small>
+							<small class="error	 " ng-show="sign_up_form.pwd.$error.minlength">{{ 'Minimum 6 characters' | langTranslate: appConvertedLang['Minimum_6_characters'] }}</small>								
+						</div>
+						<input name='pwd' ng-model='signUp.pwd' placeholder="{{ 'Password?' | langTranslate: appConvertedLang['Password'] }}" class='color-yellow' ng-minlength='6' type='password' required/>
+						<img class='input-icon icon-20' src='img/icons/lock.png'/>
+					</div>
+					</br>
+					
+					<div class='input-box'>
+						<div class="error-container" ng-show="sign_up_form.pwd.$dirty ">
+							<small class="error " ng-show="(signUp.pwd != signUp.c_pwd) ">{{ 'Passwords do not match.' | langTranslate: appConvertedLang['Passwords_do_not_match'] }}</small>
+
+						</div>
+						<input name='c_pwd' ng-model='signUp.c_pwd' placeholder="{{ 'Confirm password' | langTranslate: appConvertedLang['Confirm_Password'] }}" class='color-yellow' type='password' required/>
+						<img class='input-icon icon-20' src='img/icons/lockTick.png'/>
+					</div>
+					
+					<input ng-click='do_signUp(sign_up_form)'  class='btn bg-yellow color-white big-font m-top-20' type='button' value="{{ 'SIGN UP' | langTranslate: appConvertedLang['SIGN_UP'] }}" /> 
+					
+				</div>	
+			</div>
+		</div>
+	</div>
+	<div class='color-white text-center net-error' >No network connection!</div>	
+  </ion-content>
+ 
+</ion-modal-view>

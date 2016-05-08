@@ -1,0 +1,33 @@
+<!--<div class="modal">
+    <header class="bar bar-header bar-positive">
+        <h1 class="title">I'm A Modal</h1>
+        <div class="button button-clear" ng-click="directions.hide()"><span class="icon ion-close"></span></div>
+    </header>
+    <content padding="true">
+        <ion-scroll direction="y" class="theroot">
+            <div id="right-panel">jyjghujgh</div>
+        </ion-scroll>
+    </content>
+</div>-->
+<ion-modal-view>
+    <ion-content scroll="false">
+        <div id='login-page' class='set-bg' full-height>
+            <div class='head-bar bg-black'>
+                <p class='vertical-middle text-center color-yellow big-font'>DIRECTIONS </p>
+                <div class='close-icon' ng-click="directions.hide()">
+                    <img class='vertical-middle icon-25 ' src='img/icons/close.png' />
+                </div>
+            </div>
+
+            <div class='content-box'>
+                <content padding="true">
+                    <ion-scroll direction="y" class="theroot">
+                        <div id="right-panel">jyjghujgh</div>
+                    </ion-scroll>
+                </content>
+            </div>
+        </div>
+        <div class='color-white text-center net-error'>No network connection!</div>
+    </ion-content>
+
+</ion-modal-view>
